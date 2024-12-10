@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Colors 
+
+$first-bg-color: #f3f4f6;
+$second-bg-color: #111827;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+}
+
+input, button{
+    outline: none;
+}
+
+img{
+    width: 100%;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    background: $first-bg-color;
+    .modal{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.4);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        &__card{
+            width: 350px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 7px;
+        }
+        &__cardtitle{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            p{
+                font-size: 18px;
+                font-weight: 600;
+            }
+            button{
+                background-color: transparent;
+                font-size: 16px;
+            }
+        }
+        &__cardform{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .fullname{
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .input__field{
+                position: relative;
+                width: 100%;
+                input{
+                    width: 100%;
+                    padding: 3px 12px;
+                    transition: all .2s ease;
+                    font-size: 16px;
+                    border: 2px solid #ccc;
+                    border-radius: 3px;
+                    line-height: 24px;
+                    font-size: 14px;
+                    &:focus{
+                        border-color: #111827;
+                    }
+                    &:valid{
+                        border-color: #111827;
+                    }
+                    &:focus + label,
+                    &:valid + label{
+                        transform: translate(-5px, -25px) scale(0.9);
+                    }
+                }
+                label{
+                    left: 12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    padding: 0 6px;
+                    font-size: 14px;
+                    background-color: #fff;
+                    position: absolute;
+                    transition: .2s ease;
+                    cursor: pointer;
+                    pointer-events: none;
+                }
+            }
+            select{
+                -webkit-appearance: none;
+                width: 100%;
+                padding: 7px 12px;
+                font-size: 14px;
+                outline: none;
+                border: 2px solid #ccc;
+                cursor: pointer;
+                transition: .2s ease;
+                &:focus{
+                    border-color: #111827;
+                }
+                &:valid{
+                    border-color: #111827;
+                }
+            }
+            button{
+                font-size: 14px;
+                padding: 10px 0;
+                background-color: #111827;
+                color: #fff;
+                border-radius: 3px;
+            }
+        }
+    }
+    header{
+        width: 100%;
+        padding: 15px 0;
+        background-color: #111827;
+        position: sticky;
+        left: 0;
+        top: 0;
+        .navbar{
+            display: flex;
+            justify-content: flex-end;
+            button{
+                padding: 7px 24px;
+                border-radius: 6px;
+                color: #fff;
+                background-color: dodgerblue;
+            }
+        }
+    }
+    .wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 30px 0;
+        gap: 13px;
+        .usercard{
+            width: 380px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,.1);
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 15px;
+            &__image{
+                height: 150px;
+                overflow: hidden;
+                border-radius: 12px;
+            }
+            &__desc{
+                word-break: break-all;
+                h3{
+                    font-size: 20px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    color: rgb(79,79,79);
+                }
+                p{
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 26px;
+                    color: rgb(79,79,79);
+                }
+                .social__links{
+                    padding: 7px;
+                    border-radius: 6px;
+                    background-color: #f3f4f6;
+                    margin: 8px 0;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    a i{
+                        font-size: 14px;
+                    }
+                }
+                button{
+                width: 100%;
+                padding: 7px 0;
+                border-radius: 6px;
+                color: #fff;
+                background-color: dodgerblue;
+                }
+            }
+        }
+
+    }
+}
+
+
